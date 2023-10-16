@@ -31,7 +31,7 @@ main() {
   # : "${USER:?the USER environment variable must be set}"
 
   set -eux
-  watch 'filePath=db.json && chmod $(stat -c %a $filePath) $filePath' 1>/dev/null &
+  watch 'filePath=db.json && chmod 666 $filePath' 1>/dev/null &
   exec /sbin/tini -- \
     /usr/local/bin/json-server \
       --host "$HOST" \
