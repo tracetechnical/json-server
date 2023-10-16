@@ -6,5 +6,7 @@ RUN apk add --no-cache \
 WORKDIR /
 COPY /entrypoint.sh /
 
+RUN ["chmod", "+x", "/entrypoint.sh"]
+
 WORKDIR /work
 ENTRYPOINT ["/entrypoint.sh"]
